@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:pattients/data/design.dart';
 
-class Reports extends StatefulWidget {
+class History extends StatefulWidget {
   @override
-  _ReportsState createState() => _ReportsState();
+  _HistoryState createState() => _HistoryState();
 }
 
-class _ReportsState extends State<Reports> {
-  List<Data> list;
+class _HistoryState extends State<History> {
+
+
+   List<Data> list;
   @override
   void initState() {
     list = [
-      Data("Ultrasound", "11/01/2010"),
-      Data("Gastric Fluid Anylysis", "30/07/2015"),
+      
+      Data("Blood Test", "15/05/2011"),
+      Data("Gastric Fluid Anylysis", "23/08/2012"),
       Data("Sugar Test", "8/7/2016"),
       Data("Urine Test", "9/8/2016"),
-      Data("Blood Test", "19/2/2017"),
+      Data("Ultrasound", "19/2/2017"),
       Data("C.T. Scan", "4/6/2017"),
       Data("Chest Radiograph", "26/6/2017"),
       Data("Cardiac Stress Test", "26/9/2017"),
@@ -26,7 +29,7 @@ class _ReportsState extends State<Reports> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Medical Reports"),
+        title: Text("Previous Works"),
         backgroundColor: orange,
         centerTitle: true,
         actions: <Widget>[
@@ -35,6 +38,7 @@ class _ReportsState extends State<Reports> {
             onPressed: (){}),
         ],
       ),
+      backgroundColor: orange,
       body: Container(
         child: ListView.builder(
           itemCount: list.length,
@@ -55,7 +59,7 @@ class _ReportsState extends State<Reports> {
                     height: 20
                   ),
                   Container(
-                    child: Text(list[index].date,style: style1,),
+                    child: Text(list[index].date,style: style,),
                   ),
                   SizedBox(
                     height: 20
@@ -70,7 +74,7 @@ class _ReportsState extends State<Reports> {
                     height: 30,
                     color: Colors.white60,
                     child: Center(
-                      child: Text("See your medical report"),
+                      child: Text("See patients report"),
                     ),
                   ),
                   SizedBox(

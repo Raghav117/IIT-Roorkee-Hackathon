@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:pattients/data/design.dart';
 import 'package:open_file/open_file.dart';
+// import 'package:firebase_storage/firebase_storage.dart';
 import 'package:file_picker/file_picker.dart';
 
 class Preports extends StatefulWidget {
@@ -11,6 +12,7 @@ class Preports extends StatefulWidget {
 }
 
 class _PreportsState extends State<Preports> {
+  // StorageReference storageReference = FirebaseStorage().ref();
   File file;
   String title;
 
@@ -18,7 +20,7 @@ class _PreportsState extends State<Preports> {
   Widget build(BuildContext context) {
      return Scaffold(
       appBar: AppBar(
-        title:Text("Heindes"),
+        title:Text("Rodies"),
         backgroundColor: orange,
         elevation: 0.0,
         centerTitle: true,
@@ -68,6 +70,9 @@ SizedBox(
                 ),
                 onPressed: () async {
                   file = await FilePicker.getFile();
+                  setState(() {
+                    
+                  });
                 },
                 ),
               ),
@@ -89,9 +94,15 @@ SizedBox(
               ),
               file!=null?FlatButton(
                 color: orange,
-                onPressed: (){
-              
-              
+                onPressed: () async {
+//                   var uploadTask = storageReference
+//     .child("name")
+//     .child("title")
+//     .putFile(file);
+
+//               var storageSnapshot = await uploadTask.onComplete;
+// var url = await storageSnapshot.ref.getDownloadURL();
+// print(url);
                 },
                 child: Text("Press Here To Upload",),):Container(),
                 Text("Warning! After Uploading,you are not able change it.",style: warning,),

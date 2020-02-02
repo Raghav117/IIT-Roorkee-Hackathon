@@ -16,7 +16,7 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     return Scaffold(
             appBar: AppBar(
-        title:Text("Heindes"),
+        title:Text("Rodies"),
         backgroundColor: orange,
         elevation: 0.0,
         centerTitle: true,
