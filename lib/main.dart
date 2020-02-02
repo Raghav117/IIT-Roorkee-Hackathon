@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
               color: orange,
               elevation: 10.0,
               child: FlatButton(
-                child: Text("For Pathologist",style: style,),
+                child: Text("For Pathologist / Doctors",style: style,),
                 onPressed: ()=>Navigator.push(context,MaterialPageRoute(
                     builder: (BuildContext context)=>PLogin(),)))
             ),
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
               color: orange,
               elevation: 10.0,
               child: FlatButton(
-                child: Text("For Seeing Patients Medical History",style: style,),
+                child: Text("Patients Medical History",style: style,),
                 onPressed: ()=>Navigator.push(context,MaterialPageRoute(
                     builder: (BuildContext context)=>Login(),
 
