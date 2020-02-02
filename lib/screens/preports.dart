@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:pattients/data/design.dart';
-import 'package:file_picker/file_picker.dart';
 import 'package:open_file/open_file.dart';
+import 'package:file_picker/file_picker.dart';
 
 class Preports extends StatefulWidget {
   @override
@@ -11,8 +11,8 @@ class Preports extends StatefulWidget {
 }
 
 class _PreportsState extends State<Preports> {
-  String title;
   File file;
+  String title;
 
   @override
   Widget build(BuildContext context) {
@@ -57,26 +57,32 @@ SizedBox(
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                              child: Container(
-                  height: MediaQuery.of(context).size.height/6,
-                  width: MediaQuery.of(context).size.width/2,
-                  color: Colors.grey,
-                  child: Center(
-                    
-                    child: Text("Upload Patient Report")
-                  ),
-                ),
-                onTap: () async {
-                  file = await FilePicker.getFile();
-                  print(file.path);
-                  setState(() {
-                    
-                  });
+              child: Container(
+                height: MediaQuery.of(context).size.height/6,
+                width: 200,
+                color: Colors.grey,
+                child: FlatButton(child: Center(
                   
+                  child: Text("Upload Patient Report"),
+                  
+                ),
+                onPressed: () async {
+                  file = await FilePicker.getFile();
                 },
+                ),
               ),
             ),
+            
+              SizedBox(
+                height: 50,
+              ),
+             file!=null? FlatButton(
+                color: orange,
+                onPressed: (){
+              OpenFile.open(file.path);
+              
+                },
+                child: Text("See Your Upload File",),):Container(),
             
               SizedBox(
                 height: 50,
@@ -84,32 +90,10 @@ SizedBox(
               file!=null?FlatButton(
                 color: orange,
                 onPressed: (){
-                  OpenFile.open(file.path);
-                  // file.open(mode: FileMode.read);
-                  // Navigator.push(context,MaterialPageRoute(
-                  //   builder: (BuildContext context)=>Preports(),
-
-                  // ),);
-                },
-                child: Text("Press Here To See Your Report",),):Container(),
- 
-              SizedBox(
-                height: 20,
-              ),
-                           file!=null?FlatButton(
-                color: orange,
-                onPressed: (){
-                  // file.open(mode: FileMode.read);
-                  // Navigator.push(context,MaterialPageRoute(
-                  //   builder: (BuildContext context)=>Preports(),
-
-                  // ),);
+              
+              
                 },
                 child: Text("Press Here To Upload",),):Container(),
-                
-              SizedBox(
-                height: 20,
-              ),
                 Text("Warning! After Uploading,you are not able change it.",style: warning,),
             SizedBox(
               height: 50,
