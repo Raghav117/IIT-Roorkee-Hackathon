@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pattients/data/design.dart';
 import 'package:pattients/screens/preports.dart';
-import 'package:pattients/screens/registration.dart';
-import 'package:pattients/screens/reports.dart';
-
 
 
 
